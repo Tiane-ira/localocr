@@ -45,11 +45,6 @@ outputs:
 
 runs:
   runs-on: windows-latest
-  strategy:
-    fail-fast: false
-    matrix:
-      platform:
-        - darwin/arm64
   using: 'composite'
   steps:
     
