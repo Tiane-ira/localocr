@@ -1,9 +1,4 @@
-name: PyInstaller Action
-author: xrj4j
-description: GitHub Action to package python scripts into executables
-branding:
-  icon: hard-drive
-  color: yellow
+name: windows release
 
 on:
   workflow_dispatch
