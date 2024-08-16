@@ -5,6 +5,8 @@ branding:
   icon: hard-drive
   color: yellow
 
+on:
+  workflow_dispatch
 
 inputs:
   spec:
@@ -45,6 +47,11 @@ outputs:
 
 runs:
   runs-on: windows-latest
+  strategy:
+    fail-fast: false
+    matrix:
+      platform:
+        - darwin/arm64
   using: 'composite'
   steps:
     

@@ -5,7 +5,9 @@ branding:
   icon: hard-drive
   color: yellow
 
-
+on:
+  workflow_dispatch
+  
 inputs:
   spec:
     description: path of spec file
@@ -33,6 +35,9 @@ inputs:
     description: If passed, uploads executable artifact  with this name. Else, artifact won't be uploaded.
     default: 'rapidocr.exe'
 
+
+
+
 outputs:
   executable_path:
     description: path on runner-os, where generated executable files are stored
@@ -44,6 +49,12 @@ outputs:
 
 
 runs:
+  runs-on: windows-latest
+  strategy:
+    fail-fast: false
+    matrix:
+      platform:
+        - windows/amd64
   using: 'composite'
   steps:
     - name: (Install) python
