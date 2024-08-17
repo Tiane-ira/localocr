@@ -11,7 +11,8 @@ on:
 
 jobs:
   release:
-    runs-on: windows-latest
+    name: Release macOS
+    runs-on: macos-latest
     strategy:
       fail-fast: false
       matrix:
